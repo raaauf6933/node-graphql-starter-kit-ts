@@ -1,0 +1,47 @@
+interface Node {
+  id: ID!
+}
+
+# Scalars
+scalar DateTime
+scalar Time
+scalar Date
+scalar Upload #File Upload
+type Error {
+  field: String
+  message: String
+}
+
+type Pagination {
+  page: Int
+  limit: Int
+}
+type PaginationItems {
+  from: Int
+  to: Int
+}
+
+type PageInfo {
+  next: Pagination
+  previous: Pagination
+  showing: PaginationItems
+}
+
+enum UserType {
+  SUPER_ADMIN
+  ADMIN
+}
+
+enum CommonStatus {
+  ACT
+  DEACT
+}
+
+enum OrderDirection {
+  asc
+  desc
+}
+
+type Query {
+  test(id: String): String
+}
